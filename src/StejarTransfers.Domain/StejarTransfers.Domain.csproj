@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>StejarTransfers.Domain</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StejarTransfers.Clients\StejarTransfers.Clients.csproj" />
+  </ItemGroup>
+
+</Project>

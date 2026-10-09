@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <RootNamespace>StejarTransfers.Api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StejarTransfers.Domain\StejarTransfers.Domain.csproj" />
+    <ProjectReference Include="..\StejarTransfers.Clients\StejarTransfers.Clients.csproj" />
+  </ItemGroup>
+
+</Project>
