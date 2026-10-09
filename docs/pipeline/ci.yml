@@ -1,0 +1,31 @@
+# Training material. Semi-automated pipeline: build and unit tests run on every push and
+# pull request; the deploy job runs only when started by hand. No real secret, no real deploy.
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+      - name: Restore
+        run: dotnet restore StejarTransfers.sln
+      - name: Build
+        run: dotnet build StejarTransfers.sln --no-restore
+      - name: Unit tests
+        run: dotnet test tests/StejarTransfers.UnitTests --no-build
+
+  deploy:
+    if: github.event_name == 'workflow_dispatch'
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fake deploy
+        run: echo "Fake deploy of stejar-transfers to the training environment. Nothing is deployed."

@@ -1,0 +1,28 @@
+# Training material. Invented data.
+# Requests for the HTTP client of Rider or Visual Studio. Start the service first:
+# dotnet run --project src/StejarTransfers.Api -- --urls http://localhost:8000
+
+@host = http://localhost:8000
+
+GET {{host}}/health
+
+###
+
+POST {{host}}/fees
+Content-Type: application/json
+
+{"amount": 2000.00, "currency": "MDL", "type": "standard", "customer_segment": "retail"}
+
+###
+
+POST {{host}}/fees
+Content-Type: application/json
+
+{"amount": 300.00, "currency": "EUR", "type": "standard", "customer_segment": "premium"}
+
+###
+
+POST {{host}}/fees
+Content-Type: application/json
+
+{"amount": 2000.00, "currency": "MDL", "type": "instant", "customer_segment": "retail"}

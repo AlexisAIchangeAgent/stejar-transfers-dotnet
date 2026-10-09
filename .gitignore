@@ -1,0 +1,30 @@
+# .NET build output
+bin/
+obj/
+*.user
+*.suo
+.vs/
+
+# Tests
+TestResults/
+*.trx
+test-results/
+playwright-report/
+
+# Python (privacy-agent)
+__pycache__/
+*.py[cod]
+.venv/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+
+# Note: .env is NOT ignored. It is committed on purpose for the training (fake values only),
+# so that the training can show how Claude Code settings deny reading it.
+# In a real project, .env must be listed here.
+
+# privacy-agent (cycle 6): the log and the drafts stay on your machine
+privacy-agent/output/*
+!privacy-agent/output/.gitkeep

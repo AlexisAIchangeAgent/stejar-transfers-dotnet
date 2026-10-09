@@ -1,0 +1,2 @@
+# Training material. Dependency of the privacy intake agent (cycle 6).
+claude-agent-sdk
